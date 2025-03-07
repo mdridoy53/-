@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ নামাজের সময়</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="playAudio()">
+
+    <header>
+        <h1>বাংলাদেশের ৬৪ জেলার নামাজের সময়</h1>
+    </header>
+
+    <section id="prayer-times">
+        <h2>নামাজের সময়</h2>
+        <p>আপনার জেলার নাম নির্বাচন করুন:</p>
+        <select id="district" onchange="getPrayerTimes()">
+            <option value="">জেলা নির্বাচন করুন</option>
+            <option value="dhaka">ঢাকা</option>
+            <option value="chattogram">চট্টগ্রাম</option>
+            <option value="khulna">খুলনা</option>
+            <!-- ৬৪ জেলার নাম এখানে যোগ করুন -->
+        </select>
+        <div id="times">
+            <p>ফজর: ৫:১০ AM</p>
+            <p>যোহর: ১২:৩০ PM</p>
+            <p>আসর: ৩:৪৫ PM</p>
+            <p>মাগরিব: ৬:১৫ PM</p>
+            <p>এশা: ৭:৩০ PM</p>
+        </div>
+    </section>
+
+    <section id="live-azan">
+        <h2>লাইভ আজান</h2>
+        <button onclick="playAzan()">আজান শুনুন</button>
+    </section>
+
+    <audio id="azan-audio" src="azan.mp3"></audio>
+    <audio id="salam-audio" src="salam.mp3"></audio>
+
+    <script>
+        function playAudio() {
+            document.getElementById('salam-audio').play();
+        }
+
+        function playAzan() {
+            document.getElementById('azan-audio').play();
+        }
+    </script>
+
+</body>
+</html>
